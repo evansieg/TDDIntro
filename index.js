@@ -12,7 +12,13 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */
+  const sum = num1 + num2;
+  if (num1 + num2) {
+    return sum;
+  }
+  if (num1 + num2 != sum) {
+    return num1 + num2 * 2;
+  }
 }
 
 /**
@@ -28,7 +34,7 @@ export function sumDouble(num1, num2) {
  * makes10(4, 4); // false
  */
 export function makes10(num1, num2) {
-  /* TODO */
+  return num1 === 10 || num2 === 10 || num1 + num2 === 10;
 }
 
 /**
@@ -46,7 +52,7 @@ export function makes10(num1, num2) {
  * near100(105, 10); // true
  */
 export function near100(n, distance) {
-  /* TODO */
+  return Math.abs(100 - n) <= distance; //unsure what math.abs does fully, could we go over this in class tomorrow?//
 }
 
 /**
@@ -63,7 +69,9 @@ export function near100(n, distance) {
  * isMultiple35(7); // false
  */
 export function isMultiple35(n) {
-  /* TODO */
+  if (n % 3 === 0) return true;
+  if (n % 5 === 0) return true;
+  return false;
 }
 
 /**
@@ -81,9 +89,8 @@ export function isMultiple35(n) {
  * shareLastDigit(10, 21); // false
  */
 export function shareLastDigit(num1, num2) {
-  /* TODO */
+  return num1 % 10 === num2 % 10; // % 10 = last digit //
 }
-
 /**
  * @param {number} temp1 - First temperature.
  * @param {number} temp2 - Second temperature.
@@ -98,7 +105,12 @@ export function shareLastDigit(num1, num2) {
  * isColdAndHot(10, 50); // false
  */
 export function isColdAndHot(temp1, temp2) {
-  /* TODO */
+  if (temp1 < 100 && temp2 > 0) {
+    return true;
+  }
+  if (temp2 < 100 && temp1 > 0) {
+    return true;
+  } else return false;
 }
 
 /**
@@ -114,7 +126,7 @@ export function isColdAndHot(temp1, temp2) {
  * makeABBA("a", "b"); // "abba"
  */
 export function makeABBA(A, B) {
-  /* TODO */
+  return A + B + A + B;
 }
 
 /**
@@ -135,7 +147,7 @@ export function makeABBA(A, B) {
  * makeSLS("a", "abc"); // "aabca"
  */
 export function makeSLS(str1, str2) {
-  /* TODO */
+  return str1 + str2 + str1; // confused on this, saw solution, not understanding.
 }
 
 /**
@@ -156,7 +168,13 @@ export function makeSLS(str1, str2) {
  * canEnterClub(5, 5); // 1
  */
 export function canEnterClub(you, date) {
-  /* TODO */
+  if (you <= 2 || date <= 2) {
+    return 0;
+  } else if (you >= 8 || date >= 8) {
+    return 2;
+  } else {
+    return 1;
+  }
 }
 
 /**
@@ -177,5 +195,11 @@ export function canEnterClub(you, date) {
  * shouldAnswerPhone(true, true, false); // true
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
-  /* TODO */
+  if (isAsleep) {
+    return false;
+  } else if (isMorning) {
+    return isBoss;
+  } else {
+    return true;
+  }
 }
